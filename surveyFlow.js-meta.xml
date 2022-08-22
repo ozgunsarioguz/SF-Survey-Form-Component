@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Send Survey to Contact List</masterLabel>
+    <description>Sending customer experience survey to the flagged contacts.</description>
+    
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+       <targetConfig targets="lightning__FlowScreen">
+            <propertyType name="T" extends="SObject" label="Select Contacts" description="Select Contacts" />
+            <property name="contacts" type="{T[]}" label="Contacts" description="List of Contacts" />
+            <property name="emailsCollection" type="String[]" label="Email Collection" description="Email Collection"/>
+       </targetConfig>
+    </targetConfigs>
+
+</LightningComponentBundle>
